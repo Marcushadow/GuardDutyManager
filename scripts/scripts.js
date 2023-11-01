@@ -1,13 +1,16 @@
 const form = document.querySelector('form#csvUploadForm');
 const csvFile = document.getElementById("csvFile");
 
+
+
 const fileHandler = (f) => {
     const text = f.target.result;
-    console.log(text);
+    setCookie("csvData", text, 300)
     var data = $.csv.toArrays(text);
     console.log(data);
     
 }
+
 
 const formHandler = (event) => {
     event.preventDefault();
@@ -17,9 +20,12 @@ const formHandler = (event) => {
 
     reader.onload = fileHandler
     reader.readAsText(input);
-//     var data = $.csv.toArrays(csv)
-//     console.log(data)
+    window.location.replace("../static/menu.html");
 }
+
+
+  
+//   tableCreate();
 
 document.addEventListener("DOMContentLoaded", (event) => {
     
