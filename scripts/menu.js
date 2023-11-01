@@ -1,20 +1,5 @@
 const backButton = document.getElementById("backButton")
 
-window.onbeforeunload = function (e) {
-    var e = e || window.event;
-
-    window.location.replace("../index.html");
-    // For IE and Firefox
-    if (e) {
-        e.returnValue = 'Leaving the page';
-    }
-
-    // For Safari
-    return 'Leaving the page';
-};
-
-
-
 function tableCreate() {
     const location = document.getElementById("pointsList");
     const tbl = document.createElement('table');
